@@ -4,8 +4,7 @@ Select *
 From NashvilleData
 
 
---Populate Property Address data (Note that Parcel ID and Property Address always match) 
---and using "Parcel ID" to search for NULL Addresses in the same dataset
+--Populate Property Address data (Note that Parcel ID and Property Address always match) and using "Parcel ID" to search for NULL Addresses in the same dataset
 
 Select a.ParcelID, a.PropertyAddress, b.ParcelID, b.PropertyAddress, ISNULL(a.PropertyAddress, b.PropertyAddress)
 From NashvilleData a
