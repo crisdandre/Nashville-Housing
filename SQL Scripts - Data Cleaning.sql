@@ -27,7 +27,7 @@ From NashvilleData
 where PropertyAddress is null
 
 
---Breaking out Property Address into Adress, City using "SUBSTRING" and adding them as new columns
+--Breaking out Property Address into Address, City using "SUBSTRING" and adding them as new columns
 
 Select
 SUBSTRING(PropertyAddress, 1, CHARINDEX(',',PropertyAddress)-1) as Address,
