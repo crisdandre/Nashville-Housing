@@ -26,7 +26,7 @@ From NashvilleData
 where PropertyAddress is null
 
 
---Breaking out Property Address into Address, City using "SUBSTRING" and adding them as new columns
+--Breaking out "Property Address" into "Address" and "City" using SUBSTRING function and adding them as new columns
 
 Select
 SUBSTRING(PropertyAddress, 1, CHARINDEX(',',PropertyAddress)-1) as Address,
@@ -49,7 +49,7 @@ Select PropertyAddress, PropertyAddress_split, PropertyCity_split
 From NashvilleData
 
 
---Breaking out Owner Address into Address, City, State using PARSENAME and adding them as new columns
+--Breaking out "Owner Address" into "Address", "City", and "State" using PARSENAME function and adding them as new columns
 
 Select
 PARSENAME(REPLACE(OwnerAddress,',', '.'),3) as OwnerAddress_split,
@@ -79,7 +79,7 @@ Select OwnerAddress, OwnerAddress_split, OwnerCity_split, OwnerState_split
 From NashvilleData
 
 
---Change the binary legend 0-1 from column "Sold as Vacant" to the respective text description "No" (0) and "Yes" (1)
+--Change the binary legend 0-1 from column "Sold as Vacant" to its respective text description "No" (0) and "Yes" (1)
 
 Select SoldAsVacant,
 CASE
@@ -128,4 +128,4 @@ Select *
 From NashvilleData
 
 
---Dataset is ready for exporting and analysis!!
+--Done! Dataset is ready for exporting and analysis!
